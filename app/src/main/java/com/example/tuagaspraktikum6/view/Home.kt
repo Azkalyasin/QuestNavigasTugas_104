@@ -29,7 +29,7 @@ import com.example.tuagaspraktikum6.R
 @Composable
 fun Awal(
     modifier: Modifier = Modifier,
-    onBackBtnClick: () -> Unit
+    OnSubmitBtnClick: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -71,7 +71,7 @@ fun Awal(
         Spacer(modifier = Modifier.height(50.dp))
 
         Button(
-            onClick = onBackBtnClick,
+            onClick = OnSubmitBtnClick,
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF9C27B0)),
             shape = RoundedCornerShape(50),
             modifier = Modifier
