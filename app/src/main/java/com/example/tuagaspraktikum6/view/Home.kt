@@ -50,6 +50,21 @@ fun Awal(modifier: Modifier = Modifier) {
                 .size(180.dp)
                 .padding(4.dp)
         )
+        Spacer(modifier = Modifier.height(70.dp))
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(
+                text = "Azkal Adzkia Yassin",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Black
+            )
+            Spacer(modifier = Modifier.height(4.dp)) // jarak kecil antara nama dan NIM
+            Text(
+                text = "20230140104",
+                fontSize = 14.sp,
+                color = Color.Gray
+            )
+        }
 
     }
 }
