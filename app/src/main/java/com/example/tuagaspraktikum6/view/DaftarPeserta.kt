@@ -51,6 +51,30 @@ fun TampilData(
             )
         }
     ) { isiRuang ->
+        Column(
+            modifier = Modifier
+                .padding(isiRuang)
+                .padding(all = dimensionResource(id = R.dimen.padding_medium)),
+            verticalArrangement = Arrangement.spacedBy(
+                space = dimensionResource(id = R.dimen.padding_small)
+            )
+        ) {
+            items.forEach { item ->
+                Column {
+                    Text(
+                        text = item.first.uppercase(),
+                        fontSize = 16.sp // pakai sp
+                    )
+                    Text(
+                        text = item.second,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = FontFamily.Cursive,
+                        fontSize = 22.sp // pakai sp
+                    )
+                }
+                HorizontalDivider(thickness = 1.dp, color = Color.Cyan)
+            }
 
+        }
     }
 }
