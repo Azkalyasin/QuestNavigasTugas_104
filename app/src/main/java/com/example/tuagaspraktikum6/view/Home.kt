@@ -65,6 +65,18 @@ fun Awal(modifier: Modifier = Modifier) {
                 color = Color.Gray
             )
         }
+        Spacer(modifier = Modifier.height(50.dp)) // jarak antara teks dan tombol
+
+        Button(
+            onClick = { },
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF9C27B0)),
+            shape = RoundedCornerShape(50),
+            modifier = Modifier
+                .width(200.dp)
+                .height(50.dp)
+        ) {
+            Text(text = "Submit", fontSize = 18.sp, color = Color.White)
+        }
 
     }
 }
