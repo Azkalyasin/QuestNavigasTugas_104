@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -35,7 +37,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Form(modifier: Modifier = Modifier) {
+fun Form(modifier: Modifier = Modifier,
+         onBackBtnClick: () -> Unit = {},
+         OnSubmitBtnClick: () -> Unit = {}
+) {
     var textNama by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
     var textStatus by remember { mutableStateOf("") }
@@ -141,8 +146,28 @@ fun Form(modifier: Modifier = Modifier) {
                             Text(text = item, modifier = Modifier.padding(start = 8.dp))
                         }
                     }
+                    Spacer(modifier = Modifier.height(30.dp))
 
-
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Button(
+                            onClick = onBackBtnClick,
+                            colors = ButtonDefaults.buttonColors(containerColor = Color.Gray),
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Text("Kembali")
+                        }
+                        Spacer(modifier = Modifier.width(16.dp))
+                        Button(
+                            onClick = OnSubmitBtnClick,
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF9C27B0)),
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Text("Submit")
+                        }
+                    }
                 }
             }
         }
