@@ -27,7 +27,10 @@ import com.example.tuagaspraktikum6.R
 
 
 @Composable
-fun Awal(modifier: Modifier = Modifier) {
+fun Awal(
+    modifier: Modifier = Modifier,
+    onBackBtnClick: () -> Unit
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -44,7 +47,7 @@ fun Awal(modifier: Modifier = Modifier) {
         )
         Spacer(modifier = Modifier.height(70.dp))
         Image(
-            painter = painterResource(id = R.drawable.logoumy), // ubah ke nama file logo kamu
+            painter = painterResource(id = R.drawable.logoumy),
             contentDescription = "Logo CARD-LST",
             modifier = Modifier
                 .size(180.dp)
@@ -58,17 +61,17 @@ fun Awal(modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Medium,
                 color = Color.Black
             )
-            Spacer(modifier = Modifier.height(4.dp)) // jarak kecil antara nama dan NIM
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = "20230140104",
                 fontSize = 14.sp,
                 color = Color.Gray
             )
         }
-        Spacer(modifier = Modifier.height(50.dp)) // jarak antara teks dan tombol
+        Spacer(modifier = Modifier.height(50.dp))
 
         Button(
-            onClick = { },
+            onClick = onBackBtnClick,
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF9C27B0)),
             shape = RoundedCornerShape(50),
             modifier = Modifier
